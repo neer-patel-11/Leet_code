@@ -71,7 +71,7 @@ public:
             return false;
         
         
-        dp.resize(n,vector<int>(2000,-1));
+        dp.resize(n,vector<int>(1000,-1));
         return fun(1,1,2,stones);
         
     }
