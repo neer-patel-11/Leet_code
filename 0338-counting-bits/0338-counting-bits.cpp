@@ -4,20 +4,21 @@ public:
         
         vector<int> arr;
             
-        for(int i=0;i<=n;i++)
+        arr.push_back(0);
+        int p=0;
+        for(int i=1;i<=n;i++)
         {
-            int count=0;
-            int num=i;
-            
-            while(num!=0)
+            if(i==pow(2,p))
             {
-                if(num%2==1)
-                    count++;
-                
-                num=num/2;
-                
+                arr.push_back(1);
+                p++;
             }
-            arr.push_back(count);
+            
+            else
+            {
+                int x = arr[pow(2,p-1)] + arr[i-pow(2,p-1)];
+                arr.push_back(x);
+            }
             
         }
         
